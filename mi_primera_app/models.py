@@ -1,3 +1,28 @@
 from django.db import models
 
 # Create your models here.
+class Topic(models.Model):
+    #Definir los campos que tiene la tabla
+    top_name = models.CharField(max_length=100,unique=True)
+
+    #Representar el registro como cadena de texto
+    def __str__(self):
+        return self.top_name
+    
+class Webpage(models.Model):
+    #Definir los campos que tiene la tabla
+    topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100, unique=True)
+    url = models.URLField(unique=True)
+
+     #Representar el registro como cadena de texto
+    def __str__(self):
+        return self.name
+    
+class AccessRecord(models.Model):
+    webname = models.ForeignKey(Webpage, on_delete=models.CASCADE)
+    date = models.DateField()
+
+    #Representar el registro como cadena de texto
+    def __str__(self):
+        return str(self.date)

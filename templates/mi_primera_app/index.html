@@ -14,7 +14,31 @@
     <p>Le pedí otra chamba le dije que la de chambear me la sé</p>
     {{ username }}
     <br/>
+
+    <h2>Mis intereses son:</h2>
+    <br/>
+    <table class="table table-dark">
+        <thead>
+            <th>Interés</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ interes_1 }}</td>
+            </tr>
+            <tr>
+                <td>{{ interes_2 }}</td>
+            </tr>
+            <tr>
+                <td>{{ interes_3 }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br/>
     <img src="https://www.prensalibre.com/wp-content/uploads/2022/06/chayanne-02.jpg" alt="El papá de todos los mexicanos" width="300px"/>
     <img src="{% static 'images/josejose.jpg' %}" alt="Qué triste fue decirnos adios" width="300px"/>
+    <img src="{% static 'images/jackson.jpg' %}" alt="Qué triste fue decirnos adios" width="300px"/>
+    <img src="{% static 'images/tom.jpg' %}" alt="Qué triste fue decirnos adios" width="300px"/>
+
 </body>
 </html>
