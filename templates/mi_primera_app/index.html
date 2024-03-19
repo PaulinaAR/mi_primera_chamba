@@ -39,8 +39,8 @@
         <h2>Registro de accesos:</h2>
         {% if access_records %}
             <ol>
-                {% for record in access_records %}
-                <li>{{record.webname}} - {{record.date}}</li>
+                {% for pepito in access_records %}
+                <li>{{pepito.webname}} - {{pepito.date}}</li>
                 {% endfor %}
             </ol>
         {% else %}
