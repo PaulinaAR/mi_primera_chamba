@@ -26,3 +26,12 @@ class AccessRecord(models.Model):
     #Representar el registro como cadena de texto
     def __str__(self):
         return str(self.date)
+    
+class ElProfe(models.Model):
+    first_name = models.CharField(max_length=15)
+    last_name = models.CharField(max_length=15)
+    email = models.EmailField(unique=True)
+    phone_number = models.CharField(max_length=15)
+
+    def __str__(self):
+        return self.email
