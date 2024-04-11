@@ -16,4 +16,14 @@ def index(request):
 #Crear un formulario para mostrar
 def form_user_view(request):
     form = forms.FormUser()
+
+    #print(request.method)
+    if request.method == 'POST':
+        form = forms.FormUser(request.POST)
+        if form.is_valid():
+            print("VALIDADO!")
+            print("Name: ", form.cleaned_data['name'])
+            print("Email: ", form.cleaned_data['email'])
+            print("Text: ", form.cleaned_data['text'])
+
     return render(request, 'mi_primera_app/form_page.html', {'form' : form})
