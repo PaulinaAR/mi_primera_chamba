@@ -35,3 +35,13 @@ class ElProfe(models.Model):
 
     def __str__(self):
         return self.email
+    
+
+class Comments(models.Model):
+    name = models.CharField(max_length=15)
+    email = models.EmailField(unique=True)
+    text = models.CharField(max_length=100)
+
+
+    def __str__(self):
+        return self.email

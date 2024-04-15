@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from mi_primera_app.models import Topic, Webpage, AccessRecord, ElProfe
+from mi_primera_app.models import Topic, Webpage, AccessRecord, ElProfe, Comments
 from . import forms
 
 # Create your views here.
@@ -25,5 +25,11 @@ def form_user_view(request):
             print("Name: ", form.cleaned_data['name'])
             print("Email: ", form.cleaned_data['email'])
             print("Text: ", form.cleaned_data['text'])
+            print(form.cleaned_data['botcatcher'])
+            comment = Comments.objects.get_or_create(name=form.cleaned_data['name'],
+                                                     email=form.cleaned_data['email'], 
+                                                     text=form.cleaned_data['text'])[0]
+            comment.save()
+
 
     return render(request, 'mi_primera_app/form_page.html', {'form' : form})
