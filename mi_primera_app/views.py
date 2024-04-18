@@ -13,6 +13,9 @@ def index(request):
     return render(request, 'mi_primera_app/index.html', context=my_context)
     #return HttpResponse("<h1>Recuerdo el día en que de la chamba yo me enamoré</h1>")
 
+def otra(request):
+    return render(request, 'mi_primera_app/otra.html')
+
 #Crear un formulario para mostrar
 def form_user_view(request):
     form = forms.FormUser()
@@ -33,3 +36,6 @@ def form_user_view(request):
 
 
     return render(request, 'mi_primera_app/form_page.html', {'form' : form})
+
+def contacto(request):
+    return render(request, 'mi_primera_app/contacto.html')
