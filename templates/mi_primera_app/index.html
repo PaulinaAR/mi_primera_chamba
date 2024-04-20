@@ -60,6 +60,34 @@
         {% endif %}
     </div>
 
+    <div class="container">
+        <h2>Integrantes del equipo Dinamita</h2>
+        {% if equipo_dinamita %}
+            <table class="table">
+                <thead>
+                    <th>Primer nombre</th>
+                    <th>Primer apellido</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th>URL</th>
+                </thead>
+                <tbody>
+                    {% for integrante in equipo_dinamita %}
+                        <tr>
+                            <td>{{integrante.first_name}}</td>
+                            <td>{{integrante.last_name}}</td>
+                            <td>{{integrante.email}}</td>
+                            <td>{{integrante.phone_number}}</td>
+                            <td><a href="mi_primera_app/usuario{{integrante.first_name}}">Mi pagina</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No hay nadie nunca en la vida :(</p>
+        {% endif %}
+    </div>
+
     <br/>
     <div class="section">
         <h2>Registro de accesos:</h2>
